@@ -7,7 +7,7 @@ function SeminarList() {
   const [seminar, setSeminar] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:5000/api/seminar')
+    axios.get('http://13.60.26.36/api/seminar')
       .then(response => setSeminar(response.data))
       .catch(error => console.error(error));
   }, []);

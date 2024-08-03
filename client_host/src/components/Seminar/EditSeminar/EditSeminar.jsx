@@ -23,7 +23,7 @@ function EditSeminar() {
 
     useEffect(() => {
         const ids = location.state?.item._id;
-        axios.get(`http://localhost:5000/api/getseminar/${ids}`)
+        axios.get(`http://13.60.26.36/api/getseminar/${ids}`)
             .then(response => {
                 setWhen(response.data.when);
                 setWhere(response.data.where);
@@ -57,7 +57,7 @@ function EditSeminar() {
 
     const handleSubmit = event => {
         event.preventDefault();
-        axios.put(`http://localhost:5000/api/seminar/${id}`, {title, when, where, cost, plan })
+        axios.put(`http://13.60.26.36/api/seminar/${id}`, {title, when, where, cost, plan })
             .then(() => navigate('/'))
             .catch(error => console.error(error));
     };

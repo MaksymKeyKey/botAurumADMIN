@@ -7,7 +7,7 @@ function ScheludeList() {
   const [schelude, setSchelude] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:5000/api/schelude')
+    axios.get('http://13.60.26.36/api/schelude')
       .then(response => setSchelude(response.data))
       .catch(error => console.error(error));
   }, []);

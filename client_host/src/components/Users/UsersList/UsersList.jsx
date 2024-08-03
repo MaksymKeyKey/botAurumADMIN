@@ -7,7 +7,7 @@ function UsersList() {
     const [comments, setComments] = useState({});
 
     useEffect(() => {
-        axios.get('http://localhost:5000/api/users')
+        axios.get('http://13.60.26.36/api/users')
             .then(response => setUsers(response.data))
             .catch(error => console.error(error));
     }, []);
@@ -24,7 +24,7 @@ function UsersList() {
         setComments(prevComments => ({ ...prevComments, [userId]: value }));
         
         // Send the PUT request to update the comment
-        axios.put(`http://localhost:5000/api/users/${userId}/coment`, { coment: value })
+        axios.put(`http://13.60.26.36/api/users/${userId}/coment`, { coment: value })
             .then(response => console.log(response.data))
             .catch(error => console.error(error));
     };

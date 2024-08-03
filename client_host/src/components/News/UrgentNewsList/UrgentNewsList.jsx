@@ -5,7 +5,7 @@ function UrgentNewsList() {
   const [urgentNews, setUrgentNews] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:5000/api/news/urgent')
+    axios.get('http://13.60.26.36/api/news/urgent')
       .then(response => setUrgentNews(response.data))
       .catch(error => console.error(error));
   }, []);

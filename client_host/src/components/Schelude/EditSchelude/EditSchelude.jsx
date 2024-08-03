@@ -18,7 +18,7 @@ function EditSchelude() {
 
   useEffect(() => {
     const ids = location.state?.item._id;
-    axios.get(`http://localhost:5000/api/getshelude/${ids}`)
+    axios.get(`http://13.60.26.36/api/getshelude/${ids}`)
       .then(response => {
         setMonth(response.data.month);
         setSchelude(response.data.schelude);
@@ -40,7 +40,7 @@ function EditSchelude() {
 
   const handleSubmit = event => {
     event.preventDefault();
-    axios.put(`http://localhost:5000/api/schelude/${id}`, { month, schelude })
+    axios.put(`http://13.60.26.36/api/schelude/${id}`, { month, schelude })
       .then(() => navigate('/'))
       .catch(error => console.error(error));
   };

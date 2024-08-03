@@ -19,7 +19,7 @@ function AddNews() {
     event.preventDefault();
     const newsData = { title, content, sendDate, isUrgent, imageUrl };
 
-    axios.post('http://localhost:5000/api/news', newsData)
+    axios.post('http://13.60.26.36/api/news', newsData)
       .then(() => navigate('/'))
       .catch(error => console.error(error));
   };

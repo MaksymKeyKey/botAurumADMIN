@@ -7,13 +7,13 @@ function NewsList() {
   const [news, setNews] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:5000/api/news')
+    axios.get('http://13.60.26.36/api/news')
       .then(response => setNews(response.data))
       .catch(error => console.error(error));
   }, []);
 
   const handleDelete = (id) => {
-    axios.delete(`http://localhost:5000/api/news/${id}`)
+    axios.delete(`http://13.60.26.36/api/news/${id}`)
       .then(() => setNews(news.filter(item => item._id !== id)))
       .catch(error => console.error(error));
   };

@@ -17,7 +17,7 @@ function EditNews() {
 
   useEffect(() => {
     const ids = location.state?.item._id;
-    axios.get(`http://localhost:5000/api/getnews/${ids}`)
+    axios.get(`http://13.60.26.36/api/getnews/${ids}`)
       .then(response => {
         setTitle(response.data.title);
         setContent(response.data.content);
@@ -64,7 +64,7 @@ function EditNews() {
 
   const handleSubmit = event => {
     event.preventDefault();
-    axios.put(`http://localhost:5000/api/news/${id}`, { title, content, sendDate })
+    axios.put(`http://13.60.26.36/api/news/${id}`, { title, content, sendDate })
       .then(() => navigate('/'))
       .catch(error => console.error(error));
   };
